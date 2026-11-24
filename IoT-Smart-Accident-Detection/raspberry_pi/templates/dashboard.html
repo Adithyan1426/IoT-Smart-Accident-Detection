@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smart Accident Monitoring</title><link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></head>
+<body><main class="wrap">
+<header><div><p class="eyebrow">IOT MONITORING SYSTEM</p><h1>Smart Accident Detection</h1><p class="muted">ESP32 mesh · Raspberry Pi · Flask</p></div><span id="connection" class="pill">Connecting…</span></header>
+<section class="status"><p class="eyebrow">CURRENT STATUS</p><h2 id="accidentStatus">Waiting for telemetry</h2><p id="receivedAt" class="muted">No data received</p></section>
+<section class="grid">
+<div class="card"><p>Acceleration X</p><strong id="ax">—</strong> g</div><div class="card"><p>Acceleration Y</p><strong id="ay">—</strong> g</div>
+<div class="card"><p>Acceleration Z</p><strong id="az">—</strong> g</div><div class="card"><p>Speed</p><strong id="speed">—</strong> km/h</div>
+<div class="card"><p>Satellites</p><strong id="satellites">—</strong></div><div class="card"><p>Sequence</p><strong id="sequence">—</strong></div></section>
+<section class="card"><h2>GPS location</h2><p id="gps">Waiting for GPS fix</p><a id="mapLink" hidden target="_blank" rel="noopener">Open map</a></section>
+<section class="card"><h2>Recent telemetry</h2><div class="scroll"><table><thead><tr><th>Received UTC</th><th>Sequence</th><th>Status</th><th>Speed</th><th>GPS</th></tr></thead><tbody id="history"><tr><td colspan="5">No records yet</td></tr></tbody></table></div></section>
+<footer>Educational prototype; not a certified emergency device.</footer></main><script src="{{ url_for('static', filename='js/dashboard.js') }}"></script></body></html>
